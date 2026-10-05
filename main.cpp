@@ -1,0 +1,76 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+float calcularMedia (float n1, float n2, float n3){
+    return (n1 + n2 + n3) / 3.0;
+}
+
+int main() {
+    int totalAlunos;
+
+    cout << "Quantos alunos deseja cadastrar (maximo 6): ";
+    cin >> totalAlunos;
+
+    if (totalAlunos < 1 || totalAlunos > 6) {
+        cout << "Quantidade invalida!" << endl;
+        return 0;
+    }
+
+    string nomes[6];
+    float n1[6], n2[6], n3[6], medias[6];
+
+    for (int i = 0; i < totalAlunos; i++) {
+        cout << "\n--- Aluno " << i + 1 << " ---" << endl;
+        cout << "Nome: ";
+        cin >> nomes[i];
+
+        cout << "Digite as 3 notas (separadas por espaco): ";
+        cin >> n1[i] >> n2[i] >> n3[i];
+
+    
+        medias[i] = calcularMedia(n1[i], n2[i], n3[i]);
+    }
+
+    
+    cout << "\n=========================================================\n";
+    cout << "NOME\t\tNOTA 1\tNOTA 2\tNOTA 3\tMEDIA\tSITUACAO\n";
+    cout << "=========================================================\n";
+
+    int indiceMaiorMedia = 0;
+
+    for (int i = 0; i < totalAlunos; i++) {
+        string situacao;
+
+        if (medias[i] >= 7.0) {
+            situacao = "Aprovado";
+        } else {
+            situacao = "Reprovado";
+        }
+        cout << nomes[i] << "\t\t" 
+             << n1[i] << "\t" 
+             << n2[i] << "\t" 
+             << n3[i] << "\t" 
+             << medias[i] << "\t" 
+             << situacao << endl;
+
+        if (medias[i] > medias[indiceMaiorMedia]) {
+            indiceMaiorMedia = i;
+        }
+    }
+
+    cout << "=========================================================\n";
+    cout << "\nAluno com a maior media: " << nomes[indiceMaiorMedia] 
+         << " (Media: " << medias[indiceMaiorMedia] << ")" << endl;
+
+    return 0;
+}
