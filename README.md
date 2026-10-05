@@ -14,8 +14,11 @@ Este repositório contém um algoritmo desenvolvido em C++ para cadastrar notas 
 ### Pré-requisitos
 - Compilador de C++ instalado (como `g++`) ou um ambiente como o VS Code, Dev-C++ ou GDB Online.
 
-### Passo a passo para compilar e rodar via terminal
+## 👨‍💻 Integrantes da Equipe
 
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/MrZonde1/Exerc-cio-algoritmos.git](https://github.com/MrZonde1/Exerc-cio-algoritmos.git)
+- Vitor Giuliano Raitz Azeredo
+- Júlia Tonial
+- Davi Roberto Melo Granado
+- Heitor Santos da Costa
+- Thomas Garcia
+- Valentina Franck
